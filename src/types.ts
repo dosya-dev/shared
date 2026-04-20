@@ -12,6 +12,7 @@ export interface User {
   subscription_status: string | null;
   cancel_at_period_end: number;
   avatar_url: string | null;
+  created_at: string;
 }
 
 export interface Session {

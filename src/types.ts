@@ -35,6 +35,8 @@ export interface Workspace {
   icon_color: string;
   owner_id: string;
   created_at: string;
+  /** Per-workspace storage, attached by GET /api/workspaces (used = bytes stored; total = owner's plan bytes). */
+  storage?: { used: number; total: number } | null;
 }
 
 export interface WorkspaceMember {

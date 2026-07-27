@@ -62,6 +62,45 @@ isValidEmail('a@b.com')   // true
 validatePassword('abc')    // "Password must be at least 8 characters"
 ```
 
+## Transparency
+
+Every dosya.dev client is source-available. Your files are yours — this repository lets
+you verify exactly what our clients send to and receive from our servers: what gets
+uploaded, what metadata travels with it, and what comes back. If a claim we make about
+privacy or sync behavior can't be verified in this code, open an issue and call it out.
+
 ## License
 
-[MIT](LICENSE)
+Source-available under the [Dosya Source Available License 1.0](LICENSE):
+
+- **You can** read and audit the code, use it when building and running the official
+  dosya.dev clients, and contribute improvements.
+- **You can't** redistribute it, use it with any backend other than dosya.dev, or offer
+  it as a service. Building your own integration? Use the MIT-licensed
+  [dosya-js](https://github.com/dosya-dev/dosya-js) or
+  [dosya-java](https://github.com/dosya-dev/dosya-java) SDKs instead.
+
+See [LICENSE](LICENSE) for the exact terms. Versions of this code previously published
+under the MIT license remain MIT for those who obtained them then.
+
+## Contributing
+
+Issues and pull requests are welcome. By submitting a contribution you license it to
+dosya.dev under the contribution terms in [LICENSE](LICENSE).
+
+## Security
+
+Found a vulnerability? Please report it privately via
+[GitHub private vulnerability reporting](../../security/advisories/new) rather than a
+public issue.
+
+## The dosya.dev client family
+
+| Repository | What it is | License |
+|---|---|---|
+| [desktop](https://github.com/dosya-dev/desktop) | Desktop client — sync, upload, manage | Source-available |
+| [cli](https://github.com/dosya-dev/cli) | Command-line interface | Source-available |
+| [app.dosya.dev](https://github.com/dosya-dev/app.dosya.dev) | Web application | Source-available |
+| [shared](https://github.com/dosya-dev/shared) | Shared TypeScript types & utilities | Source-available |
+| [dosya-js](https://github.com/dosya-dev/dosya-js) | Official JavaScript SDK | MIT |
+| [dosya-java](https://github.com/dosya-dev/dosya-java) | Official Java SDK | MIT |

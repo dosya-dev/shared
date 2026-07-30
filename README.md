@@ -17,39 +17,39 @@ import type { User, FileItem, Workspace, ApiResponse } from '@dosya-dev/shared'
 ## Exported Types
 
 ### User & Auth
-- `User` — User profile (email, name, subscription, avatar)
-- `Session` — Device session with IP and location
+- `User` - User profile (email, name, subscription, avatar)
+- `Session` - Device session with IP and location
 
 ### Workspace
-- `Workspace` — Workspace metadata
-- `WorkspaceMember` — Member with role and join date
-- `WorkspaceSettings` — Storage limits, upload settings, security policies
+- `Workspace` - Workspace metadata
+- `WorkspaceMember` - Member with role and join date
+- `WorkspaceSettings` - Storage limits, upload settings, security policies
 
 ### Files & Folders
-- `FileItem` — File metadata (name, size, mime type, locked/hidden)
-- `FolderItem` — Folder metadata
-- `FileVersion` — File version history
-- `FileInfo` — Minimal file info for share links
-- `FolderTreeNode` — Recursive folder tree
+- `FileItem` - File metadata (name, size, mime type, locked/hidden)
+- `FolderItem` - Folder metadata
+- `FileVersion` - File version history
+- `FileInfo` - Minimal file info for share links
+- `FolderTreeNode` - Recursive folder tree
 
 ### Sharing
-- `ShareLink` — Share link with token, password, expiry
-- `FileRequest` — File request inbox
+- `ShareLink` - Share link with token, password, expiry
+- `FileRequest` - File request inbox
 
 ### Activity & Analytics
-- `ActivityLog` — User action logs
-- `DashboardStats` — Aggregated metrics
-- `DashboardData` — Full dashboard payload
+- `ActivityLog` - User action logs
+- `DashboardStats` - Aggregated metrics
+- `DashboardData` - Full dashboard payload
 
 ### Billing
-- `PlanId` — `"free" | "starter" | "plus" | "pro" | "business"`
-- `Subscription` — Plan status and period info
+- `PlanId` - `"free" | "starter" | "plus" | "pro" | "business"`
+- `Subscription` - Plan status and period info
 
 ### API Responses
-- `ApiSuccess<T>` — Success response wrapper
-- `ApiError` — Error response
-- `ApiResponse<T>` — Union of success/error
-- `PaginatedResponse<T>` — Paginated list
+- `ApiSuccess<T>` - Success response wrapper
+- `ApiError` - Error response
+- `ApiResponse<T>` - Union of success/error
+- `PaginatedResponse<T>` - Paginated list
 
 ## Utilities
 
@@ -64,7 +64,7 @@ validatePassword('abc')    // "Password must be at least 8 characters"
 
 ## Transparency
 
-Every dosya.dev client is source-available. Your files are yours — this repository lets
+Every dosya.dev client is source-available. Your files are yours - this repository lets
 you verify exactly what our clients send to and receive from our servers: what gets
 uploaded, what metadata travels with it, and what comes back. If a claim we make about
 privacy or sync behavior can't be verified in this code, open an issue and call it out.
@@ -98,7 +98,7 @@ public issue.
 
 | Repository | What it is | License |
 |---|---|---|
-| [desktop](https://github.com/dosya-dev/desktop) | Desktop client — sync, upload, manage | Source-available |
+| [desktop](https://github.com/dosya-dev/desktop) | Desktop client - sync, upload, manage | Source-available |
 | [cli](https://github.com/dosya-dev/cli) | Command-line interface | Source-available |
 | [app.dosya.dev](https://github.com/dosya-dev/app.dosya.dev) | Web application | Source-available |
 | [shared](https://github.com/dosya-dev/shared) | Shared TypeScript types & utilities | Source-available |

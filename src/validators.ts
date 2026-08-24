@@ -1,31 +1,14 @@
 /**
- * Shared validation utilities for dosya.dev.
+ * Legacy entry point for the two validators that existed before the policy
+ * module.
+ *
+ * These are re-exports, not copies: `validation/policy.ts` is the one definition
+ * and the only file to edit. Kept because desktop and the CLI import these names
+ * from `@dosya-dev/shared` at a dozen call sites, and renaming them at the same
+ * time as centralising the rules would have made the diff impossible to read.
+ *
+ * Prefer importing from `validation/policy` in new code - it carries the rest of
+ * the rules (names, share links, comments, tickets, API keys) and returns the
+ * server's own message rather than a boolean.
  */
-
-const EMAIL_RE =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
-
-export function isValidEmail(email: string): boolean {
-  if (!email || email.length > 254) return false;
-  return EMAIL_RE.test(email);
-}
-
-/**
- * Password complexity validation.
- * Returns null when valid, or an error message string.
- */
-export function validatePassword(password: string): string | null {
-  if (password.length < 8) {
-    return "Password must be at least 8 characters";
-  }
-  if (!/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
-    return "Password must include upper and lower case letters";
-  }
-  if (!/[0-9]/.test(password)) {
-    return "Password must include at least one number";
-  }
-  if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/.test(password)) {
-    return "Password must include at least one special character";
-  }
-  return null;
-}
+export { isValidEmail, validatePassword } from "./validation/policy";

@@ -1,6 +1,7 @@
 {
   "name": "@dosya-dev/shared",
   "version": "0.0.1",
+  "private": true,
   "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "main": "./src/index.ts",

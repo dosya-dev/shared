@@ -35,8 +35,25 @@ export interface Workspace {
   icon_color: string;
   owner_id: string;
   created_at: string;
-  /** Per-workspace storage, attached by GET /api/workspaces (used = bytes stored; total = owner's plan bytes). */
-  storage?: { used: number; total: number } | null;
+  /**
+   * Per-workspace storage, attached by GET /api/workspaces.
+   *
+   * `total` is THIS workspace's ceiling: its admin cap
+   * (workspace_settings.max_total_storage_gb) when one is set, the owner's
+   * effective entitlement when it is uncapped. `free` is what an upload will
+   * actually be allowed - the smaller of this workspace's headroom and the
+   * account's, since a cap reserves nothing and uncapped sibling workspaces
+   * draw on the same pool. Never print `total - used`.
+   */
+  storage?: {
+    used: number;
+    total: number;
+    free?: number;
+    /** The cap in bytes, or null when uncapped. */
+    cap_bytes?: number | null;
+    account_limit_bytes?: number;
+    account_used_bytes?: number;
+  } | null;
 }
 
 export interface WorkspaceMember {

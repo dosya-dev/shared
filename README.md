@@ -4,9 +4,19 @@ Shared TypeScript types and utilities for [dosya.dev](https://dosya.dev) clients
 
 ## Install
 
-```bash
-npm install @dosya-dev/shared
+This package is **not published to the npm registry**. It is an internal
+workspace package of the dosya.dev monorepo, consumed through a local path
+dependency:
+
+```json
+"dependencies": {
+  "@dosya-dev/shared": "file:../../packages/shared"
+}
 ```
+
+Do not run `npm install @dosya-dev/shared`: the `@dosya-dev` scope carries no
+packages, so that command can only ever resolve to something we did not
+publish.
 
 ## Usage
 

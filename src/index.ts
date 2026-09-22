@@ -6,3 +6,4 @@ export * from "./schemas";
 export * from "./notifications";
 export * from "./share";
 export * from "./account";
+export * from "./activity";

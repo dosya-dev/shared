@@ -8,6 +8,12 @@ export interface ShareLinkOpts {
   /** Absolute unix seconds. The API also accepts expires_in_days; we send one form everywhere. */
   expiresAt?: number | null;
   password?: string | null;
+  /**
+   * "Remove photo metadata" (API migration 0183): photos served through the
+   * link lose their EXIF/XMP/IPTC. Sent only when true, so an ordinary link's
+   * body is what it was before the option existed.
+   */
+  stripMetadata?: boolean;
 }
 
 export interface ShareEmailOpts extends ShareLinkOpts {
@@ -47,6 +53,7 @@ function applyCommon(body: Record<string, unknown>, opts: ShareLinkOpts): Record
   const pw = cleanPassword(opts.password);
   if (pw) body.password = pw;
   if (opts.expiresAt != null) body.expires_at = opts.expiresAt;
+  if (opts.stripMetadata === true) body.strip_metadata = true;
   return body;
 }
 

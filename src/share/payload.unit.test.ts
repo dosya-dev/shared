@@ -40,10 +40,22 @@ describe("buildShareLinkBody", () => {
   it("carries file_ids only for a bundle", () => {
     expect(buildShareLinkBody({ target: BUNDLE })).toEqual({ file_ids: ["f1", "f2"] });
   });
+
+  // "Remove photo metadata" (API migration 0183): present only when on, so an
+  // ordinary link's body is what it was before the option existed.
+  it("sends strip_metadata only when the option is on", () => {
+    expect(buildShareLinkBody({ target: FILE, stripMetadata: true })).toEqual({ strip_metadata: true });
+    expect(buildShareLinkBody({ target: FILE, stripMetadata: false })).toEqual({});
+  });
 });
 
 describe("buildShareEmailBody", () => {
   const base = { target: FILE, emails: ["a@b.com"], restrictToRecipients: false };
+
+  it("carries strip_metadata on an emailed link, bundle or not", () => {
+    expect(buildShareEmailBody({ ...base, stripMetadata: true })).toMatchObject({ strip_metadata: true });
+    expect(buildShareEmailBody({ ...base, target: BUNDLE, stripMetadata: true })).toMatchObject({ strip_metadata: true });
+  });
 
   it("sends the public shape when the toggle is off", () => {
     expect(buildShareEmailBody(base)).toEqual({

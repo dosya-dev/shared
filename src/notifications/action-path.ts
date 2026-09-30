@@ -26,6 +26,7 @@ const DESKTOP_RULES: Rule[] = [
   { re: /^\/uploads\/?$/, to: () => "/upload" },
   { re: /^\/teams\/?$/, to: () => "/team" },
   { re: /^\/shared\/?$/, to: () => "/shared" },
+  { re: /^\/vault\/?$/, to: () => "/vault" },
   { re: /^\/file-requests\/?$/, to: () => "/file-requests" },
   { re: /^\/activity\/?$/, to: () => "/activity" },
   { re: /^\/search\/?$/, to: () => "/search" },

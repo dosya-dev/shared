@@ -36,10 +36,10 @@ describe("desktop", () => {
     expect(mapActionPath("/shared", "desktop")).toBe("/shared");
     expect(mapActionPath("/activity", "desktop")).toBe("/activity");
     expect(mapActionPath("/file-requests", "desktop")).toBe("/file-requests");
+    expect(mapActionPath("/vault", "desktop")).toBe("/vault");
   });
 
   it("returns null for a web-only surface so the action is hidden, not broken", () => {
-    expect(mapActionPath("/vault", "desktop")).toBeNull();
     expect(mapActionPath("/billing", "desktop")).toBeNull();
     expect(mapActionPath("/duplicates", "desktop")).toBeNull();
   });

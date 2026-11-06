@@ -13,6 +13,8 @@ export interface User {
   cancel_at_period_end: number;
   avatar_url: string | null;
   created_at: string;
+  /** False for an Apple or Google sign-in account that never set a password. */
+  has_password?: boolean;
 }
 
 export interface Session {
@@ -33,6 +35,9 @@ export interface Workspace {
   slug: string;
   icon_initials: string;
   icon_color: string;
+  /** R2 key of the uploaded logo, or null. A "has logo" flag for clients:
+   *  the image itself streams from GET /api/workspaces/:id/icon. */
+  icon_image_url?: string | null;
   owner_id: string;
   created_at: string;
   /**
@@ -200,7 +205,7 @@ export interface DashboardData {
 
 // ── Billing ──────────────────────────────────────────────────────────
 
-export type PlanId = "free" | "starter" | "plus" | "pro" | "business";
+export type PlanId = "free" | "starter" | "plus" | "pro" | "business" | "tb4" | "tb6" | "tb8" | "tb10" | "tb20";
 
 export interface Subscription {
   plan: PlanId;

@@ -52,7 +52,7 @@ import type { User, FileItem, Workspace, ApiResponse } from '@dosya-dev/shared'
 - `DashboardData` - Full dashboard payload
 
 ### Billing
-- `PlanId` - `"free" | "starter" | "plus" | "pro" | "business"`
+- `PlanId` - `"free" | "starter" | "plus" | "pro" | "business" | "tb4" | "tb6" | "tb8" | "tb10" | "tb20"`
 - `Subscription` - Plan status and period info
 
 ### API Responses
@@ -113,6 +113,7 @@ public issue.
 | [app.dosya.dev](https://github.com/dosya-dev/app.dosya.dev) | Web application | Source-available |
 | [shared](https://github.com/dosya-dev/shared) | Shared TypeScript types & utilities | Source-available |
 | [wordpress](https://github.com/dosya-dev/wordpress) | WordPress plugin - backup, restore, migrate | GPL-2.0-or-later |
+| [help.dosya.dev](https://github.com/dosya-dev/help.dosya.dev) | Help center - guides and site | Source-available |
 | [browser-extensions](https://github.com/dosya-dev/browser-extensions) | Browser extension - Save to dosya for Chrome, Edge, Firefox | Source-available |
 | [dosya-js](https://github.com/dosya-dev/dosya-js) | Official JavaScript SDK | MIT |
 | [dosya-java](https://github.com/dosya-dev/dosya-java) | Official Java SDK | MIT |

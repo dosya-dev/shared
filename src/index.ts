@@ -7,3 +7,4 @@ export * from "./notifications";
 export * from "./share";
 export * from "./account";
 export * from "./activity";
+export * from "./analytics";

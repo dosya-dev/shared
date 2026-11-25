@@ -10,7 +10,8 @@
     ".": "./src/index.ts",
     "./share/payload": "./src/share/payload.ts",
     "./files/preview-formats": "./src/files/preview-formats.ts",
-    "./files/ical": "./src/files/ical.ts"
+    "./files/ical": "./src/files/ical.ts",
+    "./promo/audiences": "./src/promo/audiences.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
